@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   standalone: false,
 })
 export class PieComponent implements OnInit {
+  userName: string = 'Jared Bueno';
+
   constructor() {}
 
   ngOnInit() {}

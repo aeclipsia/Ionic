@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./accion.page.scss'],
 })
 export class AccionPage implements OnInit {
+  title: string = 'Acción';
   constructor() {}
 
   ngOnInit() {}
