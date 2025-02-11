@@ -1,0 +1,13 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-back-button
+      *ngIf="pageName != 'Inicio'"
+      slot="start"
+      text="Back"
+      color="light"
+      defaultHref="/"
+    >
+    </ion-back-button>
+    <ion-title>{{ pageName }}</ion-title>
+  </ion-toolbar>
+</ion-header>

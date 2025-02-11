@@ -1,0 +1,17 @@
+<app-cabecera></app-cabecera>
+
+<ion-content [fullscreen]="false">
+  <div>
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let item of libros" size="6">
+          <ion-card (click)="detalles(item.id)">
+            <img src="assets/libros/{{item.portada}}" />
+            <h3>{{item.titulo}}</h3>
+            <h5>{{item.autor}}</h5>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

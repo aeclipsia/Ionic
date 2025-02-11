@@ -1,0 +1,14 @@
+<app-cabecera [pageName]="title"></app-cabecera>
+
+<ion-content [fullscreen]="true">
+  <div class="content-wrapper">
+    <ion-button size="large" color="warning" [routerLink]="['/alerta']">
+      Alerta
+    </ion-button>
+    <ion-button size="large" color="success" [routerLink]="['/accion']">
+      Success
+    </ion-button>
+  </div>
+</ion-content>
+
+<app-pie></app-pie>

@@ -1,0 +1,10 @@
+<ion-header color="primary">
+  <ion-toolbar>
+    <ion-title size="large">Mis libros</ion-title>
+    <ion-searchbar
+      placeholder="Buscar libro"
+      (ionChange)="onSearchChange($event)"
+      [debounce]="250"
+    ></ion-searchbar>
+  </ion-toolbar>
+</ion-header>

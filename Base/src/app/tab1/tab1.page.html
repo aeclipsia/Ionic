@@ -1,0 +1,31 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="dark">
+    <ion-title> Noticias </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col
+        size="12"
+        size-lg="3"
+        size-md="4"
+        size-sm="6"
+        size-xs="12"
+        *ngFor="let n of noticias"
+      >
+        <ion-card color="dark">
+          <ion-card-header>
+            <ion-card-subtitle>{{n.source.name}}</ion-card-subtitle>
+            <ion-card-title>{{n.title}}</ion-card-title>
+          </ion-card-header>
+          <ion-img *ngIf="n.urlToImage" [src]="n.urlToImage"></ion-img>
+          <ion-card-content>
+            <p>{{n.description}}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
