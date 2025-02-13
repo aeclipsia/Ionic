@@ -1,0 +1,7 @@
+{
+  "name": "PracticaPelis",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

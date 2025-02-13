@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Tab 1 </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-row class="h-50">
+    <ion-col size="6" *ngFor="let peli of movies">
+      <h3>{{peli.title}}</h3>
+      <img
+        src="{{'https://image.tmdb.org/t/p/w500/'+peli.poster_path}}"
+        alt=""
+      />
+      <p>{{peli.overview}}</p>
+    </ion-col>
+  </ion-row>
+</ion-content>
