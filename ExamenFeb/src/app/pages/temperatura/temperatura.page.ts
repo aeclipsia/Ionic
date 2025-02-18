@@ -17,8 +17,7 @@ export class TemperaturaPage implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private tempService: TempService,
-    private nav: NavController
+    private tempService: TempService
   ) {}
 
   ngOnInit() {

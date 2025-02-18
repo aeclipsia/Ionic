@@ -1,0 +1,18 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngIf="activeCategory">
+    <img src="{{'assets/images/'+activeCategory.strCategoryThumb}}" />
+    <ion-card-content>
+      {{activeCategory.strCategoryDescription}}
+    </ion-card-content>
+    <ion-button
+      (click)="recetas(activeCategory.strCategory)"
+      expand="block"
+      fill="clear"
+      shape="round"
+    >
+      Ver recetas
+    </ion-button>
+  </ion-card>
+</ion-content>

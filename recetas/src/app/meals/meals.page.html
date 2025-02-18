@@ -1,0 +1,17 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngFor="let item of meals">
+    <ion-card>
+      <img src="{{'assets/images/'+item.strMealThumb}}" />
+      <ion-card-header>
+        <ion-card-subtitle>{{item.strArea}}</ion-card-subtitle>
+        <ion-card-title>{{item.strMeal}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <a href="{{item.strYoutube}}">{{item.strYoutube}}</a>
+        <p class="ion-text-justify">{{item.strInstructions}}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
