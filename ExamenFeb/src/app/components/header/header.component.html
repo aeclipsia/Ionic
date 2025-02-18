@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-icon
+      *ngIf="title != 'Examen-Febrero'; else test"
+      slot="start"
+      name="chevron-back-outline"
+      (click)="back()"
+    ></ion-icon>
+    <ng-template #test
+      ><ion-icon slot="start" name="cloudy-outline"></ion-icon
+    ></ng-template>
+    <ion-title> {{ title }} </ion-title>
+    <ion-icon slot="end" name="sunny-outline"></ion-icon>
+  </ion-toolbar>
+</ion-header>

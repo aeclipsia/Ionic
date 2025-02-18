@@ -1,0 +1,33 @@
+<app-header [title]="pageTitle"></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list *ngFor="let item of sourceList">
+    <ion-item>
+      <ion-icon slot="start" name="earth-outline"></ion-icon>
+      <ion-label>{{item.name}}</ion-label>
+      <ion-button
+        (click)="show(item)"
+        expand="block"
+        fill="clear"
+        shape="round"
+      >
+        <ion-icon
+          slot="end"
+          [name]="item.visible?'close-outline':'eye'"
+        ></ion-icon>
+      </ion-button>
+    </ion-item>
+    <ion-card *ngIf="item.visible">
+      <ion-card-header>
+        <ion-card-title> DETALLES {{item.name}} </ion-card-title>
+        <ion-card-subtitle>Autonomía seleccionada</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        {{item.description}}
+        <ion-fab-button (click)="toTemperaturas(item.name)">
+          <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
