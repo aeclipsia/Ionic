@@ -1,0 +1,13 @@
+<app-cabecera titulo="DETALLES USUARIO"></app-cabecera>
+<ion-content [fullscreen]="true">
+  <ion-list *ngIf="usuario">
+    <ion-item>{{usuario.nombre}}</ion-item>
+    <ion-item>{{usuario.telefono}}</ion-item>
+    <ion-item>{{usuario.email}}</ion-item>
+    <ion-item>{{usuario.password}}</ion-item>
+    <ion-item>{{usuario.fecha}}</ion-item>
+    <ion-item>{{usuario.mensaje}}</ion-item>
+    <ion-item>{{usuario.select}}</ion-item>
+    <ion-item>{{usuario.checkbox}}</ion-item>
+  </ion-list>
+</ion-content>

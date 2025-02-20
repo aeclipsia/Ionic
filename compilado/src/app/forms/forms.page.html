@@ -1,0 +1,122 @@
+<app-cabecera titulo="FORMS PAGE"></app-cabecera>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="usuario" (ngSubmit)="mostrar()">
+    <!-- Campo Nombre -->
+    <ion-item>
+      <ion-label>Nombre</ion-label>
+      <ion-input formControlName="nombre"></ion-input>
+    </ion-item>
+    <ion-label
+      *ngIf="usuario.controls['nombre'].errors?.['required'] && (usuario.controls['nombre'].touched || usuario.controls['nombre'].dirty)"
+    >
+      Required
+    </ion-label>
+
+    <!-- Campo Teléfono -->
+    <ion-item>
+      <ion-label>Teléfono</ion-label>
+      <ion-input type="number" formControlName="telefono"></ion-input>
+    </ion-item>
+    <ion-label
+      *ngIf="usuario.controls['telefono'].errors?.['required'] && (usuario.controls['telefono'].touched || usuario.controls['telefono'].dirty)"
+    >
+      Required
+    </ion-label>
+    <ion-label
+      *ngIf="usuario.controls['telefono'].errors?.['pattern'] && (usuario.controls['telefono'].touched || usuario.controls['telefono'].dirty)"
+    >
+      Sólo números
+    </ion-label>
+
+    <!-- Campo Email -->
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-label
+      *ngIf="usuario.controls['email'].errors?.['required'] && (usuario.controls['email'].touched || usuario.controls['email'].dirty)"
+    >
+      Required
+    </ion-label>
+    <ion-label
+      *ngIf="usuario.controls['email'].errors?.['email'] && (usuario.controls['email'].touched || usuario.controls['email'].dirty)"
+    >
+      Email inválido
+    </ion-label>
+
+    <!-- Campo Password -->
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-label
+      *ngIf="usuario.controls['password'].errors?.['required'] && (usuario.controls['password'].touched || usuario.controls['password'].dirty)"
+    >
+      Required
+    </ion-label>
+    <ion-label
+      *ngIf="usuario.controls['password'].errors?.['minlength'] && (usuario.controls['password'].touched || usuario.controls['password'].dirty)"
+    >
+      Mínimo 6 caracteres
+    </ion-label>
+
+    <!-- Campo Fecha -->
+    <ion-item>
+      <ion-label>Fecha</ion-label>
+      <ion-datetime formControlName="fecha"></ion-datetime>
+    </ion-item>
+    <ion-label
+      *ngIf="usuario.controls['fecha'].errors?.['required'] && (usuario.controls['fecha'].touched || usuario.controls['fecha'].dirty)"
+    >
+      Required
+    </ion-label>
+
+    <!-- Campo Mensaje -->
+    <ion-item>
+      <ion-label>Mensaje</ion-label>
+      <ion-textarea formControlName="mensaje"></ion-textarea>
+    </ion-item>
+    <ion-label
+      *ngIf="usuario.controls['mensaje'].errors?.['required'] && (usuario.controls['mensaje'].touched || usuario.controls['mensaje'].dirty)"
+    >
+      Required
+    </ion-label>
+    <ion-label
+      *ngIf="usuario.controls['mensaje'].errors?.['maxlength'] && (usuario.controls['mensaje'].touched || usuario.controls['mensaje'].dirty)"
+    >
+      Máximo 250 caracteres
+    </ion-label>
+
+    <!-- Campo Select -->
+    <ion-item>
+      <ion-label>Selecciona una opción</ion-label>
+      <ion-select formControlName="select">
+        <ion-select-option value="opcion1">Opción 1</ion-select-option>
+        <ion-select-option value="opcion2">Opción 2</ion-select-option>
+        <ion-select-option value="opcion3">Opción 3</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-label
+      *ngIf="usuario.controls['select'].errors?.['required'] && (usuario.controls['select'].touched || usuario.controls['select'].dirty)"
+    >
+      Required
+    </ion-label>
+
+    <!-- Campo Checkbox -->
+    <ion-item>
+      <ion-label>Acepto los términos</ion-label>
+      <ion-checkbox slot="start" formControlName="checkbox"></ion-checkbox>
+    </ion-item>
+    <ion-label
+      *ngIf="usuario.controls['checkbox'].errors?.['requiredTrue'] && (usuario.controls['checkbox'].touched || usuario.controls['checkbox'].dirty)"
+    >
+      Debes aceptar los términos
+    </ion-label>
+
+    <!-- Botón de envío -->
+    <ion-button type="submit" expand="full" [disabled]="!usuario.valid">
+      Enviar
+    </ion-button>
+  </form>
+</ion-content>

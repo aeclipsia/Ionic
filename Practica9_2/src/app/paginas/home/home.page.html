@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="registroForm" (ngSubmit)="registrar()">
+    
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input formControlName="nombre"></ion-input>
+    </ion-item>
+    <ion-label color="danger" *ngIf="registroForm.controls['nombre'].errors?.['required'] && (registroForm.controls['nombre'].touched || registroForm.controls['nombre'].dirty)">
+      * El nombre es obligatorio
+    </ion-label>
+
+    <ion-label color="danger" *ngIf="registroForm.controls['nombre'].errors?.['minlength'] && (registroForm.controls['nombre'].touched || registroForm.controls['nombre'].dirty)">
+      * La longitud minima es 8
+    </ion-label>
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email"></ion-input>
+    </ion-item>
+    <ion-label color="danger" *ngIf="registroForm.controls['email'].errors?.['required'] && (registroForm.controls['email'].touched || registroForm.controls['email'].dirty)">
+      * El email es obligatorio
+    </ion-label>
+    <ion-label color="danger" *ngIf="registroForm.controls['email'].errors?.['email'] && (registroForm.controls['email'].touched || registroForm.controls['email'].dirty)">
+      * Tiene que ser email
+    </ion-label>
+
+
+    <ion-item>
+      <ion-label position="floating">Telefono</ion-label>
+      <ion-input type="number" formControlName="telefono"></ion-input>
+    </ion-item>
+    <ion-label color="danger" *ngIf="registroForm.controls['telefono'].errors?.['required'] && (registroForm.controls['telefono'].touched || registroForm.controls['telefono'].dirty)">
+      * El telefono es obligatorio
+    </ion-label>
+
+    <ion-item>
+      <ion-label>Sexo</ion-label>
+      <ion-select formControlName="sexo" placeholder="Selecciona tu sexo">
+        <ion-select-option value="hombre">Hombre</ion-select-option>
+        <ion-select-option value="mujer">Mujer</ion-select-option>
+      </ion-select>
+      <ion-label color="danger" *ngIf="registroForm.controls['sexo'].errors?.['required'] && (registroForm.controls['sexo'].touched || registroForm.controls['sexo'].dirty)">
+        * El sexo es obligatorio
+      </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Fecha de Nacimiento</ion-label>
+        <ion-datetime formControlName="fechaNacimiento" presentation="date"></ion-datetime>
+      </ion-item>
+      <ion-label color="danger" *ngIf="registroForm.controls['fechaNacimiento'].errors?.['required'] && (registroForm.controls['fechaNacimiento'].touched || registroForm.controls['fechaNacimiento'].dirty)">
+        * La fecha es obligatorio
+      </ion-label>
+    <ion-button expand="full" type="submit" [disabled]="registroForm.invalid" >Registrarse</ion-button>
+  </form>
+</ion-content>

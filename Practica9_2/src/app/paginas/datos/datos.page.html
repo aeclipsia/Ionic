@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>datos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div *ngIf="usuario">
+    <h2>Nombre: {{ usuario.nombre }}</h2>
+    <p>Email: {{ usuario.email }}</p>
+    <p>Fecha de Nacimiento: {{ usuario.fechaNacimiento }}</p>
+    <p>Teléfono: {{ usuario.telefono }}</p>
+    <p>Sexo: {{ usuario.sexo }}</p>
+  </div>
+  <div *ngIf="!usuario">
+    <p>No se encontraron datos de usuario.</p>
+  </div>
+</ion-content>

@@ -1,0 +1,29 @@
+<ion-content [fullscreen]="true">
+  <ion-searchbar
+    [(ngModel)]="searchQuery"
+    (ionInput)="onSearchChange()"
+    [debounce]="100"
+    placeholder="Buscar"
+  ></ion-searchbar>
+  <ion-button
+    (click)="sort('nombre')"
+    expand="block"
+    fill="clear"
+    shape="round"
+  >
+    Ordenar por nombre
+  </ion-button>
+  <ion-button (click)="sort('raza')" expand="block" fill="clear" shape="round">
+    Ordenar por raza
+  </ion-button>
+  <ion-button (click)="sort('edad')" expand="block" fill="clear" shape="round">
+    Ordenar por edad
+  </ion-button>
+  <div *ngFor="let perro of perrosFiltrar">
+    <ion-list>
+      <p>{{perro.nombre}}</p>
+      <p>{{perro.raza}}</p>
+      <p>{{perro.edad}}</p>
+    </ion-list>
+  </div>
+</ion-content>
